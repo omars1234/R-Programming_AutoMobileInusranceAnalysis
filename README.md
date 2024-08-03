@@ -2,7 +2,11 @@
 
 ## *Overview*
 
-*This project aims to segment customers based on their purchasing behavior using clustering algorithms in R. The goal is to identify distinct customer groups to tailor marketing strategies effectively.*
+*On this Project ,we will use R-Programming Language in order to conduct inferential analysis to analyse the data as much as we can to help decision making*
+
+* *To access the project online on Rpubs Web ,Click on the below link*
+
+  [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1207895)
 
 
 ## *Table of Contents*
