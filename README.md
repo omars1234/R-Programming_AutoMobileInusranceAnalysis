@@ -82,7 +82,7 @@ customer-segmentation/
 ├── Data/
 │   └── data_car.csv
 ├── src/
-│   ├── data_preprocessing.R
+│   ├── AutoInsurance_R.Rmd
 │   ├── clustering.R
 │   ├── visualization.R
 │   └── main.R
