@@ -1,5 +1,10 @@
 # *Auto Mobile Insurance Analysis Using R-Programming Language*
 
+## *Author*
+
+- [@Omar Soub](https://github.com/omars1234)
+
+
 ## *Overview*
 
 *On this Project ,we will use R-Programming Language in order to conduct inferential analysis to analyse the data as much as we can to help decision making*
@@ -121,7 +126,7 @@ customer-segmentation/
 
 ## *Results*
 
-***Still under proccess***
+***👩‍💻  Still under proccess...***
 
 
 
@@ -130,6 +135,3 @@ customer-segmentation/
 
 
 
-
-
-									
