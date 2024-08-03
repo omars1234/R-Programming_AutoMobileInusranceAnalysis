@@ -7,11 +7,11 @@
 
 ## *Table of Contents*
 
-*Installation*  
-*Data*  
-*Usage*  
-*Project Structure*  
-*Results*  
+*  *Installation*  
+*  *Data*  
+*  *Usage*  
+*  *Project Structure*  
+*  *Results*  
 
 ## *Installation*  
 *To run this project, you need to have R installed on your machine. Additionally, install the required libraries by running the following commands:*
