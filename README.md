@@ -104,7 +104,7 @@ customer-segmentation/
 
 ## *Results*
 
-The clustering analysis identified three distinct customer segments. The results are visualized in the output/clustering_results.png file. Each segment represents customers with similar purchasing behaviors, which can help in creating targeted marketing strategies.
+***Still under proccess***
 
 
 
