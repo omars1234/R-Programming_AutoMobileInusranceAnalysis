@@ -9,8 +9,8 @@
   [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1207895)
 
 
-  ![Logo](src\AutoinsuranceLogo.png)
-  
+  ![Logo](src/AutoinsuranceLogo.png)
+
 
 
 ## *Table of Contents*
