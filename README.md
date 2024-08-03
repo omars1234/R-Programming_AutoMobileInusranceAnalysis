@@ -9,13 +9,12 @@
 
 *On this Project ,we will use R-Programming Language in order to conduct inferential analysis to analyse the data as much as we can to help decision making*
 
-## 🔗 Links
 
 * *To access the project online on Rpubs Web ,Click on the below link*
 
   [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1207895)  
   
-  [![rpubs](src/rpubslogo.png)](http://rpubs.com/omars/1207895)
+  
 
   ------------------------------------------------------------------
 
@@ -125,6 +124,10 @@ customer-segmentation/
 
 
 ## *Results*
+
+
+[![rpubs](src/rpubslogo.png)](http://rpubs.com/omars/1207895)
+
 
 ***👩‍💻  Still under proccess...***
 
