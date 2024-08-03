@@ -4,13 +4,21 @@
 
 *On this Project ,we will use R-Programming Language in order to conduct inferential analysis to analyse the data as much as we can to help decision making*
 
+## 🔗 Links
+
 * *To access the project online on Rpubs Web ,Click on the below link*
 
-  [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1207895)
+  [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1207895)  
+  
+  [![rpubs](src/rpubslogo.png)](http://rpubs.com/omars/1207895)
 
+  ------------------------------------------------------------------
 
   ![Logo](src/AutoinsuranceLogo.png)
 
+  ------------------------------------------------------------------ 
+
+  
 
 
 ## *Table of Contents*
@@ -20,6 +28,7 @@
 *  *Usage*  
 *  *Project Structure*  
 *  *Results*  
+
 
 ## *Installation*  
 *To run this project, you need to have R installed on your machine. Additionally, install the required libraries by running the following commands:*
