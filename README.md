@@ -18,11 +18,11 @@
   
   
 
-  ------------------------------------------------------------------
+ ------------------------------------------------------------------
 
   ![Logo](src/AutoinsuranceLogo.png)
 
-  ------------------------------------------------------------------ 
+------------------------------------------------------------------ 
 
   
 
@@ -134,12 +134,16 @@ customer-segmentation/
 
 * *after applying pearson chisq test we found there is no significant difference between genders in respect of claims*
 
+----------------------------------------
+
 *area*
 * *area A has the highest number of claims with '31%'  percentage* 
 
 * *area F has the lowest number  of claims with '6.1%' percentage*
 
 * *after applying pearson chisq test we found there is significant difference between areas in respect of claims*
+
+----------------------------------------
 
 *Age Category*  
 
@@ -149,6 +153,8 @@ customer-segmentation/
 
  * *after applying pearson chisq test we found there is significant difference between Age Categories in respect of claims*
 
+----------------------------------------
+
 *Vehicle Age*
 * *Vehicle Age 3 has highest number of claims with '29%' percentage-'noting that it has the highest count of total Vehicle Age categories observations'-*  
 
@@ -156,6 +162,7 @@ customer-segmentation/
 
 * *after applying pearson chisq test we found there is significant difference between Vehicle Ages in respect of claims*
 
+----------------------------------------
 
 *veh_body*
 
@@ -163,12 +170,13 @@ customer-segmentation/
 
 * *convt and RDSTR veh_body has the lowest number  of claims with less than '0.1%' percentage*
 
+----------------------------------------
 
 ### *Inferential Analysis :*
 
-*The Anderson-Darling normality test (p-value < 0.05) indicates non-normal distribution*
+* *The Anderson-Darling normality test (p-value < 0.05) indicates non-normal distribution*
 
-*==> Given these results, We will be using non-parametric statistical tests*
+* *==> Given these results, We will be using non-parametric statistical tests*
 
 *A.1 Mann-Whitney U Test on claimcst0 against gender :*
 
@@ -180,6 +188,8 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 0.3277674,This means there is a 32.77% chance of detecting a true effect*
 
+----------------------------------------
+
 *B.1 kruskal.test on claims against area :*
 
 * *statistically there is significant difference in the data distribution between areas*
@@ -190,10 +200,13 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 0.966717,This means there is a 96% chance of detecting a true effect*
 
+----------------------------------------
 
 *B.2 kruskal.test on claims against veh_body*
 
 * *statistically there is no significant difference in the data distribution between veh_body*
+
+----------------------------------------
 
 *B.3 kruskal.test on claims against age category*
 
@@ -205,6 +218,7 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 0.4397375,This means there is a 43.9% chance of detecting a true effect*
 
+----------------------------------------
 
 *B.4 kruskal.test on claims against number of claims*
 
@@ -216,6 +230,8 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 1,This means there is a 100% chance of detecting a true effect.*
 
+----------------------------------------
+
 *B.5 kruskal.test on claims against veh_age*
 
 * *statistically there is significant difference in the data distribution between veh_age*
@@ -225,6 +241,8 @@ customer-segmentation/
 * *leveneTest indicates that the variances are not significantly different across the groups*
 
 * *Post-hoc Power Analysis : The power of the test is 0.92,This means there is a 92% chance of detecting a true effect*
+
+----------------------------------------
 
 
 ### *Insurance risk measurements by factors:*
@@ -267,6 +285,7 @@ customer-segmentation/
 |CONVT|	6888.810|	3|	32.59685|	0.0920334|	2296.2700|	211.3336|
 |RDSTR|	1369.458|	3|	11.66872|	0.2570976|	456.4861|	117.3615|
 
+----------------------------------------
 
 *area*
 
@@ -279,7 +298,7 @@ customer-segmentation/
 |B|	1795295.2	|1021	|6297.848	|0.1621189	|1758.369	|285.0649|
 |F|	801955.4	|305	|1735.992	|0.1756921	|2629.362	|461.9581|
 
-
+----------------------------------------
 
 *age category factor*
 
