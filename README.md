@@ -12,7 +12,7 @@
 
 * *To access the project online on Rpubs Web ,Click on the below link*
 
-  [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1207895)  
+  [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1208635)  
   
   
 
@@ -126,7 +126,7 @@ customer-segmentation/
 ## *Results*
 
 
-[![rpubs](src/rpubslogo.png)](http://rpubs.com/omars/1207895)
+[![rpubs](src/rpubslogo.png)](http://rpubs.com/omars/1208635)
 
 
 ***👩‍💻  Still under proccess...***

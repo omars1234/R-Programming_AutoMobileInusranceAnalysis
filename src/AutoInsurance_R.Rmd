@@ -41,6 +41,7 @@ library(psych)
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 data <- read_csv("C:/Users/Omar/Desktop/Omar_Files/Python_Analysis/Auto_Insurance/Data_Sets/data_car.csv",
                show_col_types=FALSE)
+data<- data %>% dplyr::select(-X_OBSTAT_)
 ```
 
 
@@ -343,14 +344,12 @@ title ="gender against clm comparison")
 *now we want to assess and report the effect size and the magnitude of differences between these groups*
 
 
-```{r}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 table <- table(data$clm ,data$gender)
 chi_square_test<-chisq.test(table)
 phi_coefficient <- sqrt(chi_square_test$statistic / sum(table))
-
-cat(paste("The difference (magnitude) is",interpret_phi(phi_coefficient)," as the (effect size) - Phi Coefficient is:",phi_coefficient,"and the bayes factor indicate there is a",interpret_bf(5.18),"alternative hypothesis"))
+cat(paste("The effect size (Phi Coefficient) is",phi_coefficient ,"indicating",interpret_phi(phi_coefficient),"effect size"))
 ```
-
 
 ------------------------------------------------------------------------
 
@@ -390,7 +389,8 @@ title ="area against clm comparison",fixed.margin = "cols")+ggplot2::coord_flip(
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(vcd)
 table <- table(data$clm ,data$area)
-cat(paste("The difference (magnitude) is",interpret_cramers_v(assocstats(table)$cramer)," as the (effect size) - Cramér's V is:",assocstats(table)$cramer,"and the bayes factor indicate there is a",interpret_bf(8.35),"alternative hypothesis"))
+cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicating",interpret_cramers_v(assocstats(table)$cramer),"effect size"))
+
 ```
 
 
@@ -429,16 +429,16 @@ title ="Age Category against clm comparison",fixed.margin = "cols")+ggplot2::coo
 *now we want to assess and report the effect size and the magnitude of differences between these groups*
 
 
-```{r echo=TRUE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(vcd)
 table <- table(data$clm ,data$agecat)
-cat(paste("The difference (magnitude) is",interpret_cramers_v(assocstats(table)$cramer)," as the (effect size) - Cramér's V is:",assocstats(table)$cramer,"and the bayes factor indicate there is a",interpret_bf(18.4),"alternative hypothesis"))
+cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicating",interpret_cramers_v(assocstats(table)$cramer),"effect size"))
 ```
 
 
 ---------------------------------------------------------------------
 
-#### *veh_age :*
+#### *4. veh_age :*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(gtsummary)
@@ -469,9 +469,21 @@ title ="Vehicle Age against clm comparison",fixed.margin = "cols")+ggplot2::coor
 ```
 
 
+------------------------------------------------------------------------
+
+*now we want to assess and report the effect size and the magnitude of differences between these groups*
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(vcd)
+table <- table(data$clm ,data$veh_age)
+cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicating",interpret_cramers_v(assocstats(table)$cramer),"effect size"))
+```
+
+
 ---------------------------------------------------------------------
 
-#### *veh_body :*
+#### *5. veh_body :*
 
 ```{r echo=FALSE, fig.width=10, message=FALSE, warning=FALSE}
 library(gtsummary)
@@ -502,10 +514,10 @@ title ="veh_body against clm comparison",fixed.margin = "cols")+ggplot2::coord_f
 *now we want to assess and report the effect size and the magnitude of differences between these groups*
 
 
-```{r echo=TRUE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(vcd)
 table <- table(data$clm ,data$veh_body)
-cat(paste("The difference (magnitude) is",interpret_cramers_v(assocstats(table)$cramer)," as the (effect size) - Cramér's V is:",assocstats(table)$cramer,"and the bayes factor indicate there is a",interpret_bf(26.57),"alternative hypothesis"))
+cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicating",interpret_cramers_v(assocstats(table)$cramer),"effect size"))
 ```
 
 **------------------------------------------------------------------------**
@@ -790,10 +802,47 @@ df %>% ggbetweenstats(x=gender,y=claimcst0,type = "nonparamertic",
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-wilcox_effsize(formula =claimcst0~gender,data = df,paried=FALSE)
+effect_size<-wilcox_effsize(formula =claimcst0~gender,data = df,paried=FALSE)
+print(effect_size)
 ```
 
-*The median claims in female group was 743.42, whereas the median in male group was 800.31. The wilcox_effsize test showed that the magnitude was small and the effect size= .0315* 
+*The wilcox_effsize test showed that the effect size= .0315 and the indicating small effect size* 
+
+------------------------------------------------------------------------
+
+* *A.4 Assumption Checks:*    
+
+* *Check the homogeneity of variances using Levene's test.*
+
+
+```{r}
+levene_test <- leveneTest(claimcst0~gender,data = df)
+print(levene_test)
+```
+
+* *The test indicates that the variances are significantly different across the groups (p-value < 0.05).*
+
+------------------------------------------------------------------------
+
+* *A.5 Post-hoc Power Analysis:*
+
+* *Conduct a post-hoc power analysis based on the effect size.*
+
+```{r}
+# Post-hoc Power Analysis
+#t-test (two samples with unequal n)
+library(pwr)
+effect_size_value <- effect_size$effsize
+power_analysis <- pwr.t2n.test(n1 = length(df$gender=="M"), n2 = length(df$gender=="F"), 
+                               d = effect_size_value, 
+                               sig.level = 0.05, power = NULL)
+print(power_analysis)
+
+```
+
+* *The power of the test is 0.3277674,This means there is a 32.77% chance of detecting a true effect.*
+
+
 
 ------------------------------------------------------------------------
 
@@ -833,25 +882,59 @@ df %>% ggbetweenstats(x=area,y=claimcst0,type = "nonparamertic",
 * *now we want to assess and report the effect size and the magnitude of differences between these groups*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
+
 eff_size<-kruskal_effsize(formula =claimcst0 ~area,data = df)
 eff_size
 ```
 
-*The kruskal_effsize test showed that the magnitude was small and the effect size= 0.00468* 
+
+* *The kruskal_effsize test showed that the effect size (epsilon_squared)= 0.004680724 and the indicating small effect size*
 
 ------------------------------------------------------------------------
+
 
 * *B.1.4 to find out in details these differences we will Perform Dunn's Test with holm correction for p-values :*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(FSA)
-
 dunnTest(claimcst0 ~area,data=df, method="holm")
 ```
 
 *From the above table we can get that :*
 
 * *The p.adjusted value is less than 0.05  between area B-E ,area A-F,area B-F,area C-F --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant difference in the data distribution between all other area groups*
+
+------------------------------------------------------------------------
+
+
+* *B.1.5 Assumption Checks:* 
+
+* *Check the homogeneity of variances using Levene's test.*
+
+```{r}
+levene_test <- leveneTest(claimcst0 ~area,data=df)
+print(levene_test)
+```
+
+* *The test indicates that the variances are significantly different across the groups (p-value < 0.05).*
+
+------------------------------------------------------------------------
+
+* *B.1.6 Post-hoc Power Analysis:*
+
+* *Conduct a post-hoc power analysis based on the effect size.*
+
+```{r}
+effect_size <- sqrt(eff_size$effsize)
+power_analysis <- pwr.anova.test(k = length(unique(df$area)),
+                                 n = nrow(df) / length(unique(df$area)),
+                                 f = effect_size,
+                                 sig.level = 0.05,
+                                 power = NULL)
+print(power_analysis)
+```
+
+* *The power of the test is 0.966717,This means there is a 96% chance of detecting a true effect.*
 
 
 ------------------------------------------------------------------------
@@ -880,10 +963,6 @@ df %>% ggbetweenstats(x=veh_body,y=claimcst0,type = "nonparamertic",
                              ggtheme = ggplot2::theme_gray(),title = "claimcst0 Comparison across veh_body using Kruskal-Wallis",
                              ggsignif.args = list(textsize = 3, tip_length = 0.01, na.rm = TRUE))
 ```
-
-
-
-
 
 
 ------------------------------------------------------------------------
@@ -926,7 +1005,7 @@ eff_size<-kruskal_effsize(formula =claimcst0 ~agecat,data = df)
 eff_size
 ```
 
-*The kruskal_effsize test showed that the magnitude was small and the effect size= 0.00132* 
+* *The kruskal_effsize test showed that the effect size (epsilon_squared)= 0.001320641 and the indicating small effect size*
 
 ------------------------------------------------------------------------
 
@@ -941,6 +1020,38 @@ dunnTest(df$claimcst0 ~df$agecat,data=df, method="holm")
 *From the above table we can get that :*
 
 * *The p.adjusted value is less than 0.05 only between agecat 1-5 --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant difference in the data distribution between all other agecat groups*
+
+------------------------------------------------------------------------
+
+* *B.3.5 Assumption Checks:* 
+
+* *Check the homogeneity of variances using Levene's test.*
+
+```{r}
+levene_test <- leveneTest(claimcst0 ~agecat,data=df)
+print(levene_test)
+```
+
+* *The test indicates that the variances are significantly different across the groups (p-value < 0.05).*
+
+------------------------------------------------------------------------
+
+* *B.3.6 Post-hoc Power Analysis:*
+
+* *Conduct a post-hoc power analysis based on the effect size.*
+
+```{r}
+effect_size <- sqrt(eff_size$effsize)
+power_analysis <- pwr.anova.test(k = length(unique(df$agecat)),
+                                 n = nrow(df) / length(unique(df$agecat)),
+                                 f = effect_size,
+                                 sig.level = 0.05,
+                                 power = NULL)
+print(power_analysis)
+```
+
+* *The power of the test is 0.4397375,This means there is a 43.9% chance of detecting a true effect.*
+
 
 
 ------------------------------------------------------------------------
@@ -981,7 +1092,7 @@ eff_size<-kruskal_effsize(formula =claimcst0 ~numclaims,data = df)
 eff_size
 ```
 
-*The kruskal_effsize test showed that the magnitude was small and the effect size= 0.0338* 
+* *The kruskal_effsize test showed that the effect size (epsilon_squared)= 0.0337713 and the indicating small effect size*
 
 ------------------------------------------------------------------------
 
@@ -997,6 +1108,36 @@ dunnTest(df$claimcst0 ~df$numclaims,data=df, method="holm")
 
 * *The p.adjusted value is less than 0.05  between numclaims 1-2 ,numclaims 1-3   --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant differences in the data distribution between all other numclaims groups*
 
+------------------------------------------------------------------------
+
+* *B.4.5 Assumption Checks:* 
+
+* *Check the homogeneity of variances using Levene's test.*
+
+```{r}
+levene_test <- leveneTest(claimcst0 ~numclaims,data=df)
+print(levene_test)
+```
+
+* *The test indicates that the variances are not significantly different across the groups (p-value > 0.05).*
+
+------------------------------------------------------------------------
+
+* *B.4.6 Post-hoc Power Analysis:*
+
+* *Conduct a post-hoc power analysis based on the effect size.*
+
+```{r}
+effect_size <- sqrt(eff_size$effsize)
+power_analysis <- pwr.anova.test(k = length(unique(df$numclaims)),
+                                 n = nrow(df) / length(unique(df$numclaims)),
+                                 f = effect_size,
+                                 sig.level = 0.05,
+                                 power = NULL)
+print(power_analysis)
+```
+
+* *The power of the test is 1,This means there is a 100% chance of detecting a true effect.*
 
 
 ------------------------------------------------------------------------
@@ -1038,7 +1179,7 @@ eff_size<-kruskal_effsize(formula =claimcst0 ~veh_age,data = df)
 eff_size
 ```
 
-*The kruskal_effsize test showed that the differences was small and the effect size= 0.00339* 
+* *The kruskal_effsize test showed that the effect size (epsilon_squared)= 0.003391443 and the indicating small effect size*
 
 ------------------------------------------------------------------------
 
@@ -1053,6 +1194,39 @@ dunnTest(df$claimcst0 ~df$veh_age,data=df, method="holm")
 *From the above table we can get that :*
 
 * *The p.adjusted value is less than 0.05 only between veh_age 1-3 ,veh_age 1-4 ,veh_age 2-4   --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant difference in the data distribution between all other veh_age groups*
+
+
+------------------------------------------------------------------------
+
+* *B.5.5 Assumption Checks:* 
+
+* *Check the homogeneity of variances using Levene's test.*
+
+```{r}
+levene_test <- leveneTest(claimcst0 ~veh_age,data=df)
+print(levene_test)
+```
+
+
+* *The test indicates that the variances are not significantly different across the groups (p-value > 0.05).*
+
+------------------------------------------------------------------------
+
+* *B.5.6 Post-hoc Power Analysis:*
+
+* *Conduct a post-hoc power analysis based on the effect size.*
+
+```{r}
+effect_size <- sqrt(eff_size$effsize)
+power_analysis <- pwr.anova.test(k = length(unique(df$veh_age)),
+                                 n = nrow(df) / length(unique(df$veh_age)),
+                                 f = effect_size,
+                                 sig.level = 0.05,
+                                 power = NULL)
+print(power_analysis)
+```
+
+* *The power of the test is 0.92,This means there is a 92% chance of detecting a true effect.*
 
 
 
