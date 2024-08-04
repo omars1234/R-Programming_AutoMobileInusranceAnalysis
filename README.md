@@ -137,6 +137,9 @@ customer-segmentation/
 
 * *after applying pearson chisq test we found there is no significant difference between genders in respect of claims*
 
+
+![Logo](src/gender_against_clm_comparison.png)
+
 ----------------------------------------
 
 *area*
@@ -145,6 +148,9 @@ customer-segmentation/
 * *area F has the lowest number  of claims with '6.1%' percentage*
 
 * *after applying pearson chisq test we found there is significant difference between areas in respect of claims*
+
+
+![Logo](src/area_against_clm_comparison.png)
 
 ----------------------------------------
 
@@ -156,6 +162,9 @@ customer-segmentation/
 
  * *after applying pearson chisq test we found there is significant difference between Age Categories in respect of claims*
 
+ ![Logo](src/Age_Category_against_clm_comparison.png)
+
+
 ----------------------------------------
 
 *Vehicle Age*
@@ -165,6 +174,8 @@ customer-segmentation/
 
 * *after applying pearson chisq test we found there is significant difference between Vehicle Ages in respect of claims*
 
+![Logo](src/Vehicle_Age_against_clm_comparison.png)
+
 ----------------------------------------
 
 *veh_body*
@@ -173,11 +184,17 @@ customer-segmentation/
 
 * *convt and RDSTR veh_body has the lowest number  of claims with less than '0.1%' percentage*
 
+![Logo](src/veh_body_against_clm_comparison.png)
+
 ----------------------------------------
 
 ### *Inferential Analysis :*
 
 * *The Anderson-Darling normality test (p-value < 0.05) indicates non-normal distribution*
+
+
+![Logo](src/claimcst0_Q-Q_plot.png)
+
 
 * *==> Given these results, We will be using non-parametric statistical tests*
 
@@ -191,6 +208,8 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 0.3277674,This means there is a 32.77% chance of detecting a true effect*
 
+![Logo](src/claims_Comparison_across_genders_using_wilcox.test.png)
+
 ----------------------------------------
 
 *B.1 kruskal.test on claims against area :*
@@ -202,6 +221,8 @@ customer-segmentation/
 * *leveneTest indicates that the variances are significantly different across the groups*
 
 * *Post-hoc Power Analysis : The power of the test is 0.966717,This means there is a 96% chance of detecting a true effect*
+
+![Logo](src/claims_Comparison_across_areas_using_Kruskal-Wallis.png)
 
 ----------------------------------------
 
@@ -220,6 +241,8 @@ customer-segmentation/
 * *leveneTest indicates that the variances are significantly different across the groups*
 
 * *Post-hoc Power Analysis : The power of the test is 0.4397375,This means there is a 43.9% chance of detecting a true effect*
+
+
 
 ----------------------------------------
 
@@ -315,41 +338,22 @@ customer-segmentation/
 |1	|1307372.9	|525	|2612.274	|0.2009743	|2490.234	|500.4732|
 
 
+----------------------------------------
 
 
 
+* *To access the project online on Rpubs Web ,Click on the below link or The below RPubs Logo*
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--------------------------
-
-
-
-
-
-
-
-
-
+  [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1208635) 
 
 [![rpubs](src/rpubslogo.png)](http://rpubs.com/omars/1208635)
 
 
 ***👩‍💻  Still under proccess...***
+
+
+
+
 
 
 
