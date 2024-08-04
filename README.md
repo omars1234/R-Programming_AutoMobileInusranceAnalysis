@@ -127,6 +127,9 @@ customer-segmentation/
 
 ## *Results*
 
+### *Explonatory Analysis :*
+
+
 *Out of 67856 risk , we have 4624 with positive claims claims*
 
 *Gender*
