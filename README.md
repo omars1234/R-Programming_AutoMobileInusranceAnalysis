@@ -140,6 +140,12 @@ customer-segmentation/
 
 ![Logo](src/gender_against_clm_comparison.png)
 
+* *Gender claims probabilities*
+
+![Logo](src/probabilities_of_claims_by_gender.png)
+
+
+
 ----------------------------------------
 
 *area*
@@ -151,6 +157,11 @@ customer-segmentation/
 
 
 ![Logo](src/area_against_clm_comparison.png)
+
+
+* *area claims probabilities*
+
+![Logo](src/probabilities_of_claims_by_area.png)
 
 ----------------------------------------
 
@@ -164,6 +175,10 @@ customer-segmentation/
 
  ![Logo](src/Age_Category_against_clm_comparison.png)
 
+ * *Age_Category claims probabilities*
+
+![Logo](src/probabilities_of_claims_by_agecat.png)
+
 
 ----------------------------------------
 
@@ -176,6 +191,11 @@ customer-segmentation/
 
 ![Logo](src/Vehicle_Age_against_clm_comparison.png)
 
+
+ * *Vehicle Age claims probabilities*
+
+![Logo](src/probabilities_of_claims_by_veh_age.png)
+
 ----------------------------------------
 
 *veh_body*
@@ -185,6 +205,10 @@ customer-segmentation/
 * *convt and RDSTR veh_body has the lowest number  of claims with less than '0.1%' percentage*
 
 ![Logo](src/veh_body_against_clm_comparison.png)
+
+ * *veh_body claims probabilities*
+
+![Logo](src/probabilities_of_claims_by_veh_body.png)
 
 ----------------------------------------
 

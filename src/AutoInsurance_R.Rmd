@@ -353,7 +353,7 @@ cat(paste("The effect size (Phi Coefficient) is",phi_coefficient ,"indicating",i
 * *claims probabilities by gender*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-m<-glm(clm~gender,data = data,family = binomial())
+m<-glm(clm~gender*area,data = data,family = binomial())
 library(emmeans) 
 emmeans::emmeans(m,~gender,type="response",infer=T)
 ```
@@ -436,6 +436,7 @@ emmeans::emmeans(m,~area,type="response",infer=T)
 ```{r echo=FALSE, fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
 library(sjPlot)
 plot_model(m,type = "eff",terms = c("area"),title = "Predicted probabilities of claims by area")
+
 ```
 
 
