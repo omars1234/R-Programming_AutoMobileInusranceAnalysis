@@ -267,6 +267,8 @@ customer-segmentation/
 
 * *statistically there is no significant difference in the data distribution between veh_body*
 
+![Logo](src/visualization/claims_Comparison_across_veh_body_using_Kruskal-Wallis.png)
+
 ----------------------------------------
 
 *B.3 kruskal.test on claims against age category*
@@ -278,6 +280,9 @@ customer-segmentation/
 * *leveneTest indicates that the variances are significantly different across the groups*
 
 * *Post-hoc Power Analysis : The power of the test is 0.4397375,This means there is a 43.9% chance of detecting a true effect*
+
+
+![Logo](src/visualization/claims_Comparison_across_agecat_using_Kruskal-Wallis.png)
 
 
 
@@ -293,6 +298,8 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 1,This means there is a 100% chance of detecting a true effect.*
 
+![Logo](src/visualization/claims_Comparison_across_numclaims_using_Kruskal-Wallis.png)
+
 ----------------------------------------
 
 *B.5 kruskal.test on claims against veh_age*
@@ -304,6 +311,8 @@ customer-segmentation/
 * *leveneTest indicates that the variances are not significantly different across the groups*
 
 * *Post-hoc Power Analysis : The power of the test is 0.92,This means there is a 92% chance of detecting a true effect*
+
+![Logo](src/visualization/claims_Comparison_across_Veh_age_using_Kruskal-Wallis.png)
 
 ----------------------------------------
 

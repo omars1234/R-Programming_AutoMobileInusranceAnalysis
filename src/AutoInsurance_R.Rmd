@@ -1077,6 +1077,7 @@ kruskal.test(df$claimcst0,df$veh_body)
 df %>% ggbetweenstats(x=veh_body,y=claimcst0,type = "nonparamertic",
                              ggtheme = ggplot2::theme_gray(),title = "claimcst0 Comparison across veh_body using Kruskal-Wallis",
                              ggsignif.args = list(textsize = 3, tip_length = 0.01, na.rm = TRUE))
+
 ```
 
 
