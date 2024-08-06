@@ -312,7 +312,7 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 0.92,This means there is a 92% chance of detecting a true effect*
 
-![Logo](src/visualization/claims_Comparison_across_Veh_age_using_Kruskal-Wallis.png)
+![Logo](src/visualization/claims_Comparison_across_veh_age_using_Kruskal-Wallis.png)
 
 ----------------------------------------
 
