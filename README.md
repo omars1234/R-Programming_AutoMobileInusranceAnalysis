@@ -20,7 +20,7 @@
 
  ------------------------------------------------------------------
 
-  ![Logo](src/AutoinsuranceLogo.png)
+  ![Logo](src/visualization/AutoinsuranceLogo.png)
 
 ------------------------------------------------------------------ 
 
@@ -138,11 +138,11 @@ customer-segmentation/
 * *after applying pearson chisq test we found there is no significant difference between genders in respect of claims*
 
 
-![Logo](src/gender_against_clm_comparison.png)
+![Logo](src/visualization/gender_against_clm_comparison.png)
 
 * *Gender claims probabilities*
 
-![Logo](src/probabilities_of_claims_by_gender.png)
+![Logo](src/visualization/probabilities_of_claims_by_gender.png)
 
 
 
@@ -156,12 +156,12 @@ customer-segmentation/
 * *after applying pearson chisq test we found there is significant difference between areas in respect of claims*
 
 
-![Logo](src/area_against_clm_comparison.png)
+![Logo](src/visualization/area_against_clm_comparison.png)
 
 
 * *area claims probabilities*
 
-![Logo](src/probabilities_of_claims_by_area.png)
+![Logo](src/visualization/probabilities_of_claims_by_area.png)
 
 ----------------------------------------
 
@@ -173,11 +173,11 @@ customer-segmentation/
 
  * *after applying pearson chisq test we found there is significant difference between Age Categories in respect of claims*
 
- ![Logo](src/Age_Category_against_clm_comparison.png)
+ ![Logo](src/visualization/Age_Category_against_clm_comparison.png)
 
  * *Age_Category claims probabilities*
 
-![Logo](src/probabilities_of_claims_by_agecat.png)
+![Logo](src/visualization/probabilities_of_claims_by_agecat.png)
 
 
 ----------------------------------------
@@ -189,12 +189,12 @@ customer-segmentation/
 
 * *after applying pearson chisq test we found there is significant difference between Vehicle Ages in respect of claims*
 
-![Logo](src/Vehicle_Age_against_clm_comparison.png)
+![Logo](src/visualization/Vehicle_Age_against_clm_comparison.png)
 
 
  * *Vehicle Age claims probabilities*
 
-![Logo](src/probabilities_of_claims_by_veh_age.png)
+![Logo](src/visualization/probabilities_of_claims_by_veh_age.png)
 
 ----------------------------------------
 
@@ -204,11 +204,11 @@ customer-segmentation/
 
 * *convt and RDSTR veh_body has the lowest number  of claims with less than '0.1%' percentage*
 
-![Logo](src/veh_body_against_clm_comparison.png)
+![Logo](src/visualization/veh_body_against_clm_comparison.png)
 
  * *veh_body claims probabilities*
 
-![Logo](src/probabilities_of_claims_by_veh_body.png)
+![Logo](src/visualization/probabilities_of_claims_by_veh_body.png)
 
 ----------------------------------------
 
@@ -217,7 +217,7 @@ customer-segmentation/
 * *The Anderson-Darling normality test (p-value < 0.05) indicates non-normal distribution*
 
 
-![Logo](src/claimcst0_Q-Q_plot.png)
+![Logo](src/visualization/claimcst0_Q-Q_plot.png)
 
 
 * *==> Given these results, We will be using non-parametric statistical tests*
@@ -232,7 +232,7 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 0.3277674,This means there is a 32.77% chance of detecting a true effect*
 
-![Logo](src/claims_Comparison_across_genders_using_wilcox.test.png)
+![Logo](src/visualization/claims_Comparison_across_genders_using_wilcox.test.png)
 
 ----------------------------------------
 
@@ -246,7 +246,7 @@ customer-segmentation/
 
 * *Post-hoc Power Analysis : The power of the test is 0.966717,This means there is a 96% chance of detecting a true effect*
 
-![Logo](src/claims_Comparison_across_areas_using_Kruskal-Wallis.png)
+![Logo](src/visualization/claims_Comparison_across_areas_using_Kruskal-Wallis.png)
 
 ----------------------------------------
 
