@@ -392,7 +392,7 @@ customer-segmentation/
 
   [*AutoMobilePricesAnalysis-http://rpubs.com/omars/1207895*](http://rpubs.com/omars/1208635) 
 
-[![rpubs](src/rpubslogo.png)](http://rpubs.com/omars/1208635)
+[![rpubs](src/visualization/rpubslogo.png)](http://rpubs.com/omars/1208635)
 
 
 ***👩‍💻  Still under proccess...***
