@@ -1407,7 +1407,6 @@ univariate(data, x = gender, severity =claimcst0 , nclaims = numclaims,
 ```{r echo=FALSE, fig.height=7, fig.width=10, message=FALSE, warning=FALSE}
 univariate(data, x = gender, severity = claimcst0, nclaims = numclaims,
            exposure = exposure) %>% autoplot(background = FALSE)
-
 ```
 
 
@@ -1490,6 +1489,7 @@ univariate(data, x = veh_body, severity = claimcst0, nclaims = numclaims,
 ####
 univariate(data, x = veh_body, severity = claimcst0, nclaims = numclaims,
            exposure = exposure) %>% autoplot(background = FALSE)
+
 ```
 
 
@@ -1528,6 +1528,7 @@ univariate(data, x = area, severity = claimcst0, nclaims = numclaims,
 ####
 univariate(data, x = area, severity = claimcst0, nclaims = numclaims,
            exposure = exposure) %>% autoplot(background = FALSE)
+
 ```
 
 
