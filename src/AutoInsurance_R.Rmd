@@ -330,14 +330,12 @@ data %>% dplyr::select( clm, gender )  %>%
 ------------------------------------------------------------------------
 
 
-* *Visualizing gender against clm *
+* *Visualizing gender against clm*
 
 ```{r echo=FALSE, fig.height=5, fig.width=10, message=FALSE, warning=FALSE}
 data %>% ggbarstats(x=gender,y = clm,label = "both",ggtheme = ggplot2::theme_gray(),sample.size.label.args = list(size = 5),
 title ="gender against clm comparison")
 ```
-
-
 
 ------------------------------------------------------------------------
 
@@ -350,6 +348,31 @@ chi_square_test<-chisq.test(table)
 phi_coefficient <- sqrt(chi_square_test$statistic / sum(table))
 cat(paste("The effect size (Phi Coefficient) is",phi_coefficient ,"indicating",interpret_phi(phi_coefficient),"effect size"))
 ```
+
+
+* *claims probabilities by gender*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+m<-glm(clm~gender,data = data,family = binomial())
+library(emmeans) 
+emmeans::emmeans(m,~gender,type="response",infer=T)
+```
+
+
+* *Insights*
+
+*the probability of females having claims is little higher than the probability of males with .0686 females and 0.0675 for males*
+
+
+* *To visualize our results :*
+
+```{r echo=FALSE, fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
+library(sjPlot)
+plot_model(m,type = "eff",terms = c("gender"),title = "Predicted probabilities of claims by gender")
+```
+
+
+
 
 ------------------------------------------------------------------------
 
@@ -394,6 +417,29 @@ cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicat
 ```
 
 
+
+* *claims probabilities by area*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+m<-glm(clm~area,data = data,family = binomial())
+library(emmeans) 
+emmeans::emmeans(m,~area,type="response",infer=T)
+```
+
+* *Insights*
+
+*We can see that area== F has the highest probability of claimed with 0.0783%  and area== D has the lowest probability with 0.0607%*
+
+
+* *To visualize our results :*
+
+```{r echo=FALSE, fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
+library(sjPlot)
+plot_model(m,type = "eff",terms = c("area"),title = "Predicted probabilities of claims by area")
+```
+
+
+
 ---------------------------------------------------------------------
 
 #### *3. agecat :*
@@ -434,6 +480,29 @@ library(vcd)
 table <- table(data$clm ,data$agecat)
 cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicating",interpret_cramers_v(assocstats(table)$cramer),"effect size"))
 ```
+
+
+
+* *claims probabilities by agecat*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+m<-glm(clm~agecat,data = data,family = binomial())
+library(emmeans) 
+emmeans::emmeans(m,~agecat,type="response",infer=T)
+```
+
+* *Insights*
+
+*We can see that agecat== 1 has the highest probability of claimed with 0.0864%  and agecat== 6 has the lowest probability with 0.0558%*
+
+
+* *To visualize our results :*
+
+```{r echo=FALSE, fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
+library(sjPlot)
+plot_model(m,type = "eff",terms = c("agecat"),title = "Predicted probabilities of claims by agecat")
+```
+
 
 
 ---------------------------------------------------------------------
@@ -481,6 +550,28 @@ cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicat
 ```
 
 
+
+* *claims probabilities by agecat*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+m<-glm(clm~veh_age,data = data,family = binomial())
+library(emmeans) 
+emmeans::emmeans(m,~veh_age,type="response",infer=T)
+```
+
+* *Insights*
+
+*We can see that veh_age== 2 has the highest probability of claimed with 0.0759%  and veh_age== 4 has the lowest probability with 0.0622%*
+
+
+* *To visualize our results :*
+
+```{r echo=FALSE, fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
+library(sjPlot)
+plot_model(m,type = "eff",terms = c("veh_age"),title = "Predicted probabilities of claims by veh_age")
+```
+
+
 ---------------------------------------------------------------------
 
 #### *5. veh_body :*
@@ -519,6 +610,29 @@ library(vcd)
 table <- table(data$clm ,data$veh_body)
 cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicating",interpret_cramers_v(assocstats(table)$cramer),"effect size"))
 ```
+
+
+
+* *claims probabilities by veh_body*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+m<-glm(clm~veh_body,data = data,family = binomial())
+library(emmeans) 
+emmeans::emmeans(m,~veh_body,type="response",infer=T)
+```
+
+* *Insights*
+
+*We can see that veh_body== BUS has the highest probability of claimed with 18.75%  and veh_body== CONVT has the lowest probability with 0.0370%*
+
+
+* *To visualize our results :*
+
+```{r echo=FALSE, fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
+library(sjPlot)
+plot_model(m,type = "eff",terms = c("veh_body"),title = "Predicted probabilities of claims by veh_body")
+```
+
 
 **------------------------------------------------------------------------**
 
@@ -1257,6 +1371,16 @@ data <- read_csv("C:/Users/Omar/Desktop/Omar_Files/Python_Analysis/Auto_Insuranc
 ```
 
 
+```{r message=FALSE, warning=FALSE, include=FALSE}
+data$agecat<-as.factor(data$agecat)
+data$veh_age<-as.factor(data$veh_age)
+data$veh_body<-as.factor(data$veh_body)
+data$gender<-as.factor(data$gender)
+data$area<-as.factor(data$area)
+```
+
+
+
 ## *gender factor*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -1439,6 +1563,9 @@ univariate(data, x = agecat, severity = claimcst0, nclaims = numclaims,
 ```
 
 
+------------------------------------------------------------------------
+
+
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 numclaims_glm_agecat<-glm(data = data,formula = numclaims~agecat,family = poisson,offset = log(exposure))
 ```
@@ -1449,8 +1576,10 @@ numclaims_glm_all<-glm(formula = numclaims~veh_body+veh_age+gender+area+agecat,f
 numclaims_glm_all %>% summary()
 ```
 
+
 ```{r eval=FALSE, fig.height=7, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
 numclaims_glm_all %>% coefplot::coefplot(title="factors coefficient")
+
 ```
 
 ```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
@@ -1471,6 +1600,8 @@ glm(formula = numclaims~veh_body+veh_age+gender+area+agecat,family = poisson,off
 ```
 
 ------------------------------------------------------------------------
+
+
 
 
 
