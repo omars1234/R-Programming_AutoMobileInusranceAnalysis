@@ -106,11 +106,9 @@ customer-segmentation/
 │   └── data_car.csv
 ├── src/
 │   ├── AutoInsurance_R.Rmd
-│   ├── clustering.R
-│   ├── visualization.R
-│   └── main.R
-├── output/
-│   └── clustering_results.png
+│   |
+│   |── visualization
+│  
 ├── README.md
 ```
 
