@@ -261,6 +261,9 @@ customer-segmentation/
 
 ![Logo](src/visualization/claims_Comparison_across_areas_using_Kruskal-Wallis.png)
 
+* *dunnTest : The p.adjusted value is less than 0.05  between area B-E ,area A-F,area B-F,area C-F --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant difference in the data distribution between all other area groups*
+
+
 ----------------------------------------
 
 *B.2 kruskal.test on claims against veh_body*
@@ -268,6 +271,8 @@ customer-segmentation/
 * *statistically there is no significant difference in the data distribution between veh_body*
 
 ![Logo](src/visualization/claims_Comparison_across_veh_body_using_Kruskal-Wallis.png)
+
+
 
 ----------------------------------------
 
@@ -283,6 +288,8 @@ customer-segmentation/
 
 
 ![Logo](src/visualization/claims_Comparison_across_agecat_using_Kruskal-Wallis.png)
+
+* *dunnTest : The p.adjusted value is less than 0.05 only between agecat 1-5 --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant difference in the data distribution between all other agecat groups*
 
 
 
@@ -300,6 +307,9 @@ customer-segmentation/
 
 ![Logo](src/visualization/claims_Comparison_across_numclaims_using_Kruskal-Wallis.png)
 
+
+* *dunnTest : The p.adjusted value is less than 0.05  between numclaims 1-2 ,numclaims 1-3   --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant differences in the data distribution between all other numclaims groups*
+
 ----------------------------------------
 
 *B.5 kruskal.test on claims against veh_age*
@@ -313,6 +323,9 @@ customer-segmentation/
 * *Post-hoc Power Analysis : The power of the test is 0.92,This means there is a 92% chance of detecting a true effect*
 
 ![Logo](src/visualization/claims_Comparison_across_veh_age_using_Kruskal-Wallis.png)
+
+* *dunnTest : The p.adjusted value is less than 0.05 only between veh_age 1-3 ,veh_age 1-4 ,veh_age 2-4   --> statistically there is significant difference in the data distribution between these groups,and there is no statistically significant difference in the data distribution between all other veh_age groups*
+
 
 ----------------------------------------
 

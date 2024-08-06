@@ -417,7 +417,6 @@ cat(paste("The effect size (Cramér's V) is ", assocstats(table)$cramer,"indicat
 ```
 
 
-
 * *claims probabilities by area*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -1563,6 +1562,7 @@ univariate(data, x = agecat, severity = claimcst0, nclaims = numclaims,
 ```{r echo=FALSE, fig.height=7, fig.width=10, message=FALSE, warning=FALSE}
 univariate(data, x = agecat, severity = claimcst0, nclaims = numclaims,
            exposure = exposure) %>% autoplot(background = FALSE)
+
 ```
 
 
