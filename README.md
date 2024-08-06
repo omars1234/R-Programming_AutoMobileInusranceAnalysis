@@ -1,11 +1,7 @@
 # *Auto Mobile Insurance Analysis Using R-Programming Language*
 
-***👩‍💻  Still under proccess...***
 
-## *Author*
-
-- [@Omar Soub](https://github.com/omars1234)
-
+## *Author  [Omar Soub](https://github.com/omars1234)*
 
 ## *Overview*
 
@@ -421,7 +417,18 @@ customer-segmentation/
 [![rpubs](src/visualization/rpubslogo.png)](http://rpubs.com/omars/1208635)
 
 
-***👩‍💻  Still under proccess...***
+## *Feedback*
+
+*If you have any feedback, please reach out to us at omars.soub@gmail.com*
+
+## 🔗 Links
+
+[*my github page-https://github.com/omars1234*](https://github.com/omars1234)
+
+## *🛠 Skills*
+*python, R, SQL ,PowerBi ,Tableaue*
+
+
 
 
 
