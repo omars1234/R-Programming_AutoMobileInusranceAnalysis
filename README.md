@@ -143,6 +143,9 @@ customer-segmentation/
 ![Logo](src/visualization/probabilities_of_claims_by_gender.png)
 
 
+* *The probability of females having claims is little higher than the probability of males with .0686 females and 0.0675 for males*
+
+
 
 ----------------------------------------
 
@@ -161,6 +164,8 @@ customer-segmentation/
 
 ![Logo](src/visualization/probabilities_of_claims_by_area.png)
 
+* *We can see that area== F has the highest probability of claimed with 0.0783%  and area== D has the lowest probability with 0.0607%*
+
 ----------------------------------------
 
 *Age Category*  
@@ -176,6 +181,8 @@ customer-segmentation/
  * *Age_Category claims probabilities*
 
 ![Logo](src/visualization/probabilities_of_claims_by_agecat.png)
+
+* *We can see that agecat== 1 has the highest probability of claimed with 0.0864%  and agecat== 6 has the lowest probability with 0.0558%*
 
 
 ----------------------------------------
@@ -194,6 +201,9 @@ customer-segmentation/
 
 ![Logo](src/visualization/probabilities_of_claims_by_veh_age.png)
 
+* *We can see that veh_age== 2 has the highest probability of claimed with 0.0759%  and veh_age== 4 has the lowest probability with 0.0622%*
+
+
 ----------------------------------------
 
 *veh_body*
@@ -207,6 +217,11 @@ customer-segmentation/
  * *veh_body claims probabilities*
 
 ![Logo](src/visualization/probabilities_of_claims_by_veh_body.png)
+
+* *Sedan veh_body  has highest number of claims with '32%' percentage-'noting that it has the highest count of total veh_body observations'-* 
+
+* *convt and RDSTR veh_body has the lowest number  of claims with less than '0.1%' percentage*
+
 
 ----------------------------------------
 
